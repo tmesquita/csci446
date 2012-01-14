@@ -1,0 +1,136 @@
+html {
+	background: #aaa;
+	margin: 0 0 0 0;
+	font-family: sans-serif;
+}
+
+body {
+	margin: 0 0 0 0;
+}
+
+	.container {
+		margin: 0 auto 0 auto;
+		width: 1000px;
+		border: solid thin #000;
+	}
+
+	.container .header {
+		background: #ccc;
+		padding: 5px 10px 10px 10px;
+	}
+
+		.container .header h1 {
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+			letter-spacing: -2px;
+		}
+		
+		.container .header h5 {
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+			color: #666;
+			font-weight: normal;
+		}
+	
+	.container .navbar {
+		background: #000;
+		padding: 10px 10px 10px 0px;
+		font-weight: bold;
+	}
+		
+		.container .navbar a {
+			position: relative;
+			z-index: 24;
+			color: #FFF;
+			text-decoration: none;
+			padding: 20px 20px 60px 8px;
+		}
+
+		.container .navbar a:hover {
+			color: #A00000;
+		}
+		
+		.container .navbar a.tooltip span {
+			display: none;
+			padding: 2px 3px;
+			margin-left: 8px;
+			width: 130px;	
+		}
+
+		.container .navbar a.tooltip:hover span{
+			display: block;
+			position: absolute;
+			top: 3em; 
+			left: 2em;
+			width: 15em;
+			border: 1px solid #A00000;
+			background: #FFF;
+		}
+
+		.container .navbar ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container .navbar li {
+			display: inline;
+			width: 100px;
+		}
+
+	.container .body {
+		background: #fff;
+		padding: 10px;
+		min-height: 240px;
+	}
+
+		.container .body .left-column {
+			float: left;
+			width: 530px;
+		} 	
+
+		.container .body .left-column h2 {
+			margin: 0px 0px 20px 0px;
+			padding: 0;	
+		}
+
+		.container .body .left-column p {
+			float: left;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+		}
+
+		.container .body .left-column select {
+			float: left;
+		}
+
+		.container .body .left-column input.button {
+			margin: 15px 0px 15px 200px;
+		}
+
+		.container .body .left-column input.box {
+			margin: 0px 0px 20px 30px;
+		}
+
+		.container .body .right-column {
+			background: #F0F0FF;
+			float: right;
+			width: 320px;
+			padding: 5px;
+		}
+
+		.container .body .right-column h3 {
+			margin: 0;
+			padding: 0;
+		}
+
+	.container .footer {
+		background: #F0F0F0;
+		padding: 10px;
+		font-size: .8em;
+	}
+	
+		.container .footer p {
+			margin: 0 0 0 0;
+			text-align: center;
+		}
