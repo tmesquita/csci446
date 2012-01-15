@@ -4,6 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text.html; charset=UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/master.css" />
+		<script type="text/javascript" src="javascript/validate.js"></script>
 		<title>Life Figure-Outer Application</title>
 	</head>
 
@@ -29,8 +30,8 @@
 			<div class="body">
 				<div class="left-column">
 					<h2>Lorem Ipsum Dolor Sit Amet</h2>
-					<form>
-						How do you feel today? <input class="box" type="text" name="mood" /> <br />
+					<form onsubmit="javascript:check()">
+						How do you feel today? <input class="box" type="text" id="mood" /> <br />
 						<p>How would you like to feel? <br />(choose all that apply) </p>
 						<select multiple size=4>
 							<option value="numb">Comfortably numb
