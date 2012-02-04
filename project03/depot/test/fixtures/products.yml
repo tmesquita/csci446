@@ -1,13 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-   title: MyString
+  title: MyString
   description: MyText
   image_url: MyString
   price: 9.99
 
 two:
-   title: MyString
+  title: MyString
   description: MyText
   image_url: MyString
   price: 9.99
+
+bns:
+  title: Beer n Sammich Machine
+  description: The last machine you'll ever need to buy
+  price: 1500.00
+  image_url: beer_machine.jpg
