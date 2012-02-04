@@ -1,89 +1,50 @@
-class CartsController < ApplicationController
-  # GET /carts
-  # GET /carts.json
-  def index
-    @carts = Cart.all
+require 'test_helper'
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @carts }
-    end
+class CartsControllerTest < ActionController::TestCase
+  setup do
+    @cart = carts(:one)
   end
 
-  # GET /carts/1
-  # GET /carts/1.json
-  def show
-    begin
-      @cart = Cart.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      logger.error "Attempt to access invalid cart #{params[:id]}"
-      redirect_to store_url, :notice => 'invalid cart'
-    else
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render :json => @cart }
-      end
-    end
+  test "should get index" do
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:carts)
   end
 
-  # GET /carts/new
-  # GET /carts/new.json
-  def new
-    @cart = Cart.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render :json => @cart }
-    end
+  test "should get new" do
+    get :new
+    assert_response :success
   end
 
-  # GET /carts/1/edit
-  def edit
-    @cart = Cart.find(params[:id])
+  test "should create cart" do
+    assert_difference('Cart.count') do
+      post :create, :cart => @cart.attributes
+    end
+
+    assert_redirected_to cart_path(assigns(:cart))
   end
 
-  # POST /carts
-  # POST /carts.json
-  def create
-    @cart = Cart.new(params[:cart])
-
-    respond_to do |format|
-      if @cart.save
-        format.html { redirect_to @cart, :notice => 'Cart was successfully created.' }
-        format.json { render :json => @cart, :status => :created, :location => @cart }
-      else
-        format.html { render :action => "new" }
-        format.json { render :json => @cart.errors, :status => :unprocessable_entity }
-      end
-    end
+  test "should show cart" do
+    get :show, :id => @cart.to_param
+    assert_response :success
   end
 
-  # PUT /carts/1
-  # PUT /carts/1.json
-  def update
-    @cart = Cart.find(params[:id])
-
-    respond_to do |format|
-      if @cart.update_attributes(params[:cart])
-        format.html { redirect_to @cart, :notice => 'Cart was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render :action => "edit" }
-        format.json { render :json => @cart.errors, :status => :unprocessable_entity }
-      end
-    end
+  test "should get edit" do
+    get :edit, :id => @cart.to_param
+    assert_response :success
   end
 
-  # DELETE /carts/1
-  # DELETE /carts/1.json
-  def destroy
-    @cart = current_cart
-    @cart.destroy
-    session[:cart_id] = nil
+  test "should update cart" do
+    put :update, :id => @cart.to_param, :cart => @cart.attributes
+    assert_redirected_to cart_path(assigns(:cart))
+  end
 
-    respond_to do |format|
-      format.html { redirect_to (store_url, :notice => 'Your cart is currently empty') }
-      format.json { head :no_content }
+  test "should destroy cart" do
+    assert_difference('Cart.count', -1) do
+      session[:cart_id] = @cart.id
+      delete :destroy, :id => @cart.to_param
     end
+
+    assert_redirected_to store_path
   end
 end
