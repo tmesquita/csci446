@@ -1,6 +1,10 @@
-<h1>Editing article</h1>
+<h1>Articl.es<h1>
+<h4>... My cousin works for bit.ly</h4>
+
+<br>
+<%= link_to 'Back', articles_path %>
+<br>
+
+<h2>Editing "<%= @article.title %>"</h2>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>
