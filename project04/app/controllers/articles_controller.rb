@@ -41,6 +41,8 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(params[:article])
+    @article.date_posted = Time.current.to_datetime
+    @article.num_edits = 1
 
     respond_to do |format|
       if @article.save
@@ -57,7 +59,8 @@ class ArticlesController < ApplicationController
   # PUT /articles/1.json
   def update
     @article = Article.find(params[:id])
-
+    @article.num_edits += 1
+    
     respond_to do |format|
       if @article.update_attributes(params[:article])
         format.html { redirect_to @article, :notice => 'Article was successfully updated.' }
