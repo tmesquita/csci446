@@ -1,3 +1,21 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1, h4 {
+	
+}
+
+.header {
+	margin-left:auto;
+	margin-right:auto;
+	width: 25%;
+}
+
+.articles .table_header {
+	
+}
+
+.articles {
+	height: 5em;
+	overflow: auto;
+}

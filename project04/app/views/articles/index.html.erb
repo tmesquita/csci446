@@ -1,32 +1,38 @@
-<h1>Articl.es</h1>
-<h4>... with a name .com hipsters will love</h4>
+<div class='header'>
+    <h1>Articl.es</h1>
+    <h4>... with a name .com hipsters will love</h4>
+</div>
 
 <h2>All the world's articles</h2> 
 <%= link_to 'New Article', new_article_path %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Author Name</th>
-    <th>Body</th>
-    <th>Date posted</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class='articles'>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Author Name</th>
+            <th>Body</th>
+            <th>Date posted</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        
+        <% @articles.each do |article| %>
+        <tr>
+            <td><%= article.title %></td>
+            <td><%= article.author %></td>
+            <td><%= truncate(article.body, :length => 40) %></td>
+            <td><%= article.date_posted.strftime("%b. %d, %Y") %></td>
+            <td><%= link_to 'Show', article %></td>
+            <td><%= link_to 'Edit', edit_article_path(article) %></td>
+            <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+        <% end %>
+            
+    </table>
+</div>  
 
-<% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.author %></td>
-    <td><%= truncate(article.body, :length => 40) %></td>
-    <td><%= article.date_posted.strftime("%b. %d, %Y") %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
 
 <br />
 
