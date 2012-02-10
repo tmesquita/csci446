@@ -5,8 +5,8 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'List all articles', articles_path %> | <%= link_to 'Edit', edit_article_path(@article) %>
-
+<%= link_to 'List all articles', articles_path %> | <%= link_to 'Edit', edit_article_path(@article) %> | <%= link_to 'Delete', @article, :confirm => 'Are you sure?', :method => :delete %> | <%= mail_to '', "Email", :subject => @article.title, :body => request.url%>
+ 
 
 <p>
   <h2><%= @article.title %></h2>
