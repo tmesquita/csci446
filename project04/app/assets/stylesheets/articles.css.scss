@@ -35,3 +35,15 @@ th {
 	height: 20em;
 	overflow: auto;
 }
+
+label {
+	width: 10em;
+	float: left;
+	text-align: right;
+	margin-right: 3em;
+	display: block;	
+}
+
+.actions {
+	margin-left: 13em;
+}

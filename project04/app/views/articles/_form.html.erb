@@ -1,3 +1,4 @@
+<br /><br /><br />
 <%= form_for(@article) do |f| %>
   <% if @article.errors.any? %>
     <div id="error_explanation">
@@ -12,21 +13,29 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
-
+  <br />
   <div class="field">
-    <%= f.label :author %><br />
+    <%= f.label :author, 'Author Name' %>
     <%= f.text_field :author %>
+  <br />
+  <br />
+  <br />
+  
   <div class="field">
-    <%= f.label :body %><br />
+    <%= f.label :body %>
     <%= f.text_area :body %>
   </div>
 
   </div>
   
   <div class="actions">
-    <%= f.submit %>
+    <% if @article.new_record?%>
+      <%= f.submit 'Create!'%>
+    <% else %>
+      <%= f.submit 'Save Changes'%>
+    <% end %>
   </div>
 <% end %>
