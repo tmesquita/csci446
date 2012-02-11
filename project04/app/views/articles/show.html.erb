@@ -6,7 +6,7 @@
 <p id="notice"><%= notice %></p>
 
 <ul>
-	<li><%= link_to image_tag('left_arrow.png')+' List all articles', articles_path, :title => 'Return to list of articles' %> </li> 
+	<li><%= link_to image_tag('left_arrow.png')+' List all articles', articles_path, :title => 'Return to list of articles' %></li> 
 
 	<li><%= link_to image_tag("edit.png")+" edit", edit_article_path(@article), :title => 'Edit article' %></li>
 
@@ -19,7 +19,7 @@
 </p>
 
 <p>
-  By <%= @article.author %>. <%= @article.num_edits %> edits since 
+  By <%= @article.author %>. <%= pluralize(@article.num_edits, 'edit') %> since 
   <%= @article.date_posted.strftime("%b. %d, %Y") %>.
 </p>
 
