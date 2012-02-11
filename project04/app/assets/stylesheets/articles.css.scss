@@ -9,8 +9,19 @@ h2 {
 	display: inline;
 }
 
+ul{
+	list-stlye-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	display: inline;
+	padding-right: 5em;
+}
 th {
-	background: #D0D0D0;	
+	background: #6D6D6D;
+	color: black;	
 }
 
 .date, .title, .author {
@@ -28,7 +39,7 @@ th {
 	background: white;
 }
 .odd_row {
-	background-color: #CCFFFF;
+	background-color: #DBDBDB;
 }
 
 .articles {
@@ -46,4 +57,22 @@ label {
 
 .actions {
 	margin-left: 13em;
+}
+
+a {
+  color:#494949;
+  &:visited {color: #666}
+  &:hover {
+	color: black;
+	background-color: #DBDBDB;
+	}
+}
+
+
+a:visited {
+  color:#666666;
+}
+a:hover {
+  background-color:#DBDBDB;
+  color:black;
 }
