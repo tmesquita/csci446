@@ -43,8 +43,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
     @article.date_posted = Time.current.to_datetime
-    @article.num_edits = 1
-
+    
     respond_to do |format|
       if @article.save
         format.html { redirect_to articles_url, :notice => 'Article was successfully created.' }
