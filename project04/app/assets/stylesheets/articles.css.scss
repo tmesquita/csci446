@@ -5,6 +5,10 @@
 	margin-left: 40%;
 }
 
+body{
+	margin: 30px;
+}
+
 h2 {
 	display: inline;
 }
@@ -19,6 +23,7 @@ li {
 	display: inline;
 	padding-right: 5em;
 }
+
 th {
 	background: #6D6D6D;
 	color: black;	
@@ -34,8 +39,8 @@ th {
 	text-align: left;
 }
 
-.button {
-	width: 10em;
+.buttons {
+	width: 7em;
 	background: white;
 }
 .odd_row {
@@ -43,7 +48,8 @@ th {
 }
 
 .articles {
-	height: 20em;
+	height: 25em;
+	width: 65em;
 	overflow: auto;
 }
 
@@ -75,4 +81,8 @@ a:visited {
 a:hover {
   background-color:#DBDBDB;
   color:black;
+}
+
+.new_article_button {
+	margin-left: 26em;
 }

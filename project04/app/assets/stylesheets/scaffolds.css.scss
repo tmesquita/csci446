@@ -25,10 +25,9 @@ div {
   color: green; }
 
 .field_with_errors {
-  padding: 2px;
-  margin-left: 13em;
   background-color: red;
-  display: table; }
+  width: 45em;
+  display: block; }
 
 #error_explanation {
   width: 450px;

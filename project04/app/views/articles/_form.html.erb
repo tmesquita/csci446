@@ -6,7 +6,7 @@
 
       <ul>
       <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li><%= msg %></li><br />
       <% end %>
       </ul>
     </div>
@@ -26,7 +26,7 @@
   
   <div class="field">
     <%= f.label :body %>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :size => '45x20' %>
   </div>
 
   </div>
