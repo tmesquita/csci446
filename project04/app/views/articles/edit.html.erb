@@ -3,7 +3,7 @@
 	<h4>... My cousin works for Bit.ly</h4>
 </div>
 
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Back', @referer, :title => 'Return to previous page' %>
 <br /><br />
 
 <h2>Editing "<%= @article.title %>"</h2>
