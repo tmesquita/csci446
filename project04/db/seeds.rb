@@ -19,5 +19,5 @@ for i in (1..25)
 								You can do your thing then come near,},
 					:author => 'Rebelution',
 					:date_posted => Time.now,
-					:num_edits => 1)
+					:num_edits => 0)
 end
