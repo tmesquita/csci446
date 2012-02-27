@@ -18,10 +18,9 @@
   </div>
   <br />
   <div class="field">
-    <%= f.label :author, 'Author Name' %>
-    <%= f.text_field :author %>
-  <br />
-  <br />
+    <%= f.label :author_id %>
+    <%= collection_select(:article, :author_id, @authors, :id, :name, {:prompt => 'Select Author'})%>
+  </div>
   <br />
   
   <div class="field">

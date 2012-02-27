@@ -19,7 +19,7 @@
 </p>
 
 <p>
-  By <%= @article.author %>. <%= pluralize(@article.num_edits, 'edit') %> since 
+  By <%= @article.author.name %>. <%= pluralize(@article.num_edits, 'edit') %> since 
   <%= @article.date_posted.strftime("%b. %d, %Y") %>.
 </p>
 
