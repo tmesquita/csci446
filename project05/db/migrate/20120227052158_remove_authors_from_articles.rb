@@ -1,9 +1,9 @@
-class RemoveAuthorsFromArticles < ActiveRecord::Migration
+class RemoveAuthorFromArticles < ActiveRecord::Migration
   def up
-    remove_column :articles, :authors
+    remove_column :articles, :author
   end
 
   def down
-    add_column :articles, :authors, :text
+    add_column :articles, :author, :string
   end
 end

@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   def index
     #@articles = Article.all
     @articles = Article.paginate :page => params[:page], :order=>'created_at desc', :per_page => 10
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @articles }
@@ -26,6 +26,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.json
   def new
     @article = Article.new
+    @authors = Author.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +37,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    @authors = Author.all
     @referer = request.referer
     session[:return_to] = request.referer
   end

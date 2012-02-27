@@ -1,6 +1,7 @@
 Article.delete_all
+Author.delete_all
 
-for i in (1..100)
+for i in (1..25)
 	Article.create(	:id => i, 
 					:title => 'Safe and Sound',
 					:body => %{When we come down, o yeah yeah yeah 
@@ -17,7 +18,11 @@ for i in (1..100)
 								Is This the kinda vibe that you wanna feel, 
 								Well I'm the type of guy that you'll never fear, 
 								You can do your thing then come near,},
-					:author => 'Rebelution',
+					:author_id => 1,
 					:date_posted => Time.now,
 					:num_edits => 0)
 end
+
+Author.create (:id => 1, :name => 'bob saget')
+Author.create (:id => 2, :name => 'George Costanza')
+Author.create (:id => 3, :name => 'P.O.S.')
