@@ -1,0 +1,88 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.header {
+	margin-left: 40%;
+}
+
+body{
+	margin: 30px;
+}
+
+h2 {
+	display: inline;
+}
+
+ul{
+	list-stlye-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	display: inline;
+	padding-right: 5em;
+}
+
+th {
+	background: #6D6D6D;
+	color: black;	
+}
+
+.date, .title, .author {
+	text-align: left;
+	width: 10em;
+}
+
+.article_body {
+	width: 25em;
+	text-align: left;
+}
+
+.buttons {
+	width: 7em;
+	background: white;
+}
+.odd_row {
+	background-color: #DBDBDB;
+}
+
+.articles {
+	height: 25em;
+	width: 65em;
+	overflow: auto;
+}
+
+label {
+	width: 10em;
+	float: left;
+	text-align: right;
+	margin-right: 3em;
+	display: block;	
+}
+
+.actions {
+	margin-left: 13em;
+}
+
+a {
+  color:#494949;
+  &:visited {color: #666}
+  &:hover {
+	color: black;
+	background-color: #DBDBDB;
+	}
+}
+
+
+a:visited {
+  color:#666666;
+}
+a:hover {
+  background-color:#DBDBDB;
+  color:black;
+}
+
+.new_article_button {
+	margin-left: 26em;
+}
