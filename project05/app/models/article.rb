@@ -1,7 +1,9 @@
 class Article < ActiveRecord::Base
-	validates :title, :body, :author, :presence => true
-	validate :no_pats
+	validates :title, :body, :author_id, :presence => true
+	#validate :no_pats
 
+	belongs_to :author
+	
 	private
 
 		def no_pats
