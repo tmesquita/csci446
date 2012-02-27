@@ -6,7 +6,12 @@
 <h2>All the World's Articles</h2> 
 <span class='new_article_button'><%= link_to image_tag('plus.png')+' Create an Article', new_article_path, :title => 'Creates a new article' %></span>
 
-<br /><br /><br />
+<br /><br />
+
+    <%= will_paginate @articles, :inner_window => 4, :outer_window => 4 %>
+
+
+<br />
 
 <table>
         <tr>
@@ -18,6 +23,7 @@
         </tr>
     
 </table>
+
 <div class='articles'>
     <table>
         <% @articles.each do |article| %>
@@ -36,6 +42,8 @@
             
     </table>
 </div>  
+
+<%= will_paginate @articles %>
 
 <br />
 <%= @articles.count %> articles.

@@ -1,6 +1,6 @@
 Article.delete_all
 
-for i in (1..25)
+for i in (1..100)
 	Article.create(	:id => i, 
 					:title => 'Safe and Sound',
 					:body => %{When we come down, o yeah yeah yeah 

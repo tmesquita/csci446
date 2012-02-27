@@ -86,3 +86,16 @@ a:hover {
 .new_article_button {
 	margin-left: 26em;
 }
+
+.pagination {
+	margin-left: 30%;
+	color: red;
+	a {
+  		color: red;
+  		&:visited {color: darkred}
+  		&:hover {
+		color: black;
+		background-color: #DBDBDB;
+		}
+	}
+}
