@@ -1,0 +1,9 @@
+.header
+  %h1 Articl.es
+  %h1
+  %h4 ... not just for the country of Spain
+= link_to image_tag('left_arrow.png')+' List all articles', articles_path, :title => 'Return to list of articles'
+%br/
+%br/
+%h2 Creating a New Article
+= render 'form'

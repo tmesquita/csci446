@@ -1,0 +1,32 @@
+.header
+  %h1 Articl.es
+  %h4 ... with a name .com hipsters will love
+%h2 All the World's Articles
+%span.new_article_button= link_to image_tag('plus.png')+' Create an Article', new_article_path, :title => 'Creates a new article'
+%br/
+%br/
+= will_paginate @articles, :inner_window => 4, :outer_window => 4
+%br/
+%table
+  %tr
+    %th.title Title
+    %th.author Author Name
+    %th.article_body Body
+    %th.date Creation Date
+    %th.buttons
+.articles
+  %table
+    - @articles.each do |article|
+      <tr class='#{cycle('odd_row', 'even_row')}'>
+      %td.title= truncate(article.title, :length => 20)
+      %td.author= truncate(article.author.name, :length => 20)
+      %td.article_body= truncate(article.body, :length => 40)
+      %td.date= article.date_posted.strftime("%b. %d, %Y")
+      %td.buttons
+        = link_to image_tag("search.png"), article, :title => 'View article'
+        = link_to image_tag('edit.png'), edit_article_path(article), :title => 'Edit article'
+        = link_to image_tag('destroy.png'), article, :title => 'Delete article', :confirm => 'Are you sure?', :method => :delete
+= will_paginate @articles
+%br/
+= @articles.count
+articles.

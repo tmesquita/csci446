@@ -1,0 +1,16 @@
+.header
+  %h1 Articl.es
+  %h4 ... What's "Articl" in spanish anyways?
+%p#notice= notice
+%ul
+  %li= link_to image_tag('left_arrow.png')+' List all articles', articles_path, :title => 'Return to list of articles'
+  %li= link_to image_tag("edit.png")+" edit", edit_article_path(@article), :title => 'Edit article'
+  %li= link_to image_tag("destroy.png")+' delete', @article, :title => 'Delete article', :confirm => 'Are you sure?', :method => :delete
+  %li= mail_to '', image_tag('mail.png')+' email', :title => 'Share this article', :subject => @article.title, :body => request.url
+%p
+  %h2= @article.title
+%p
+  By #{@article.author.name}. #{pluralize(@article.num_edits, 'edit')} since
+  \#{@article.date_posted.strftime("%b. %d, %Y")}.
+%p
+  = simple_format @article.body
