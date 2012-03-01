@@ -2,6 +2,9 @@
 %p
   %b Name:
   = @author.name
+%p
+  %b Photo:
+  = image_tag @author.photo.url
 = link_to 'Edit', edit_author_path(@author)
 |
 \#{link_to 'Back', authors_path}
