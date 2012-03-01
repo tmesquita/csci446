@@ -6,4 +6,11 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+    .header
+      %h1 Articl.es
+      = yield :subtitle
+    
     = yield
+    %menu 
+      = link_to 'Authors', authors_path
+      = link_to 'Articles', articles_path
