@@ -11,3 +11,19 @@
  *= require_self
  *= require_tree .
 */
+.nav_bar{
+  text-align: right;
+  ul {
+  	list-style-type: none;
+  	display: inline;
+  }
+
+  a {
+  	color:#494949;
+  	&:visited {color: #666}
+  	&:hover {
+	  color: black;
+	  background-color: #DBDBDB;
+	}
+  }
+}

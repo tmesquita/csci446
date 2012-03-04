@@ -5,12 +5,20 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+
+  .nav_bar
+    %ul
+      %li
+        = link_to 'Authors', authors_path
+      %li
+        = link_to 'Articles', articles_path
+
+
   %body
     .header
       %h1 Articl.es
       = yield :subtitle
+      %br/
     
     = yield
-    %menu 
-      = link_to 'Authors', authors_path
-      = link_to 'Articles', articles_path
+    
