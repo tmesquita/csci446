@@ -1,5 +1,5 @@
 class Author < ActiveRecord::Base
-	has_many :articles
+	has_many :articles, :dependent => :destroy
 	validates :name, :presence => true
 	validate :no_pats
 	has_attached_file :photo
