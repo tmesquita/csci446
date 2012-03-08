@@ -1,0 +1,55 @@
+#1.
+#2. 
+#3. relative
+#4. http post
+#5. There is a query string, it is 'request_type=PUT'
+#6. a title attribute
+#7. The database stores and persistes the data and state of the application. The browser displays the data.
+#8. Yes it would usually contain a body, this is because of the status code of 200 and the use of Etag, if the etag determined that the content was not modified we would have recieved a 304 response code and the body would not have been sent. Since we have a 200 code I think is it safe to assume that it contains a body, unless of course it was a HEAD request. 
+#
+#RUBY
+#9.
+class Troll
+	attr_accessor :ugliness, :smelliness, :strength
+	@grunt
+
+	def initialize
+		@grunt = "UNGAH"
+	end
+	
+	def speak
+		puts @grunt * 42
+	end
+
+	def reverse
+		puts @grunt.reverse
+	end
+
+	def self.propogate
+		blah = Troll.new
+		@grunt = "eegah"
+	end
+end
+
+thomas = Troll.new
+thomas.speak
+andrew = Troll.propogate
+andrew.speak
+#10. we are missing the "fight" method from our class definition
+#11. yes
+#12. boolean
+#13. the method without the bang will return a copy of the original with what ever modification the method did to it. The method with the bang(!) will change the object itself that called the method.
+#14. Duck typing
+#15. %w yeilds an array of strings
+#16. Yes
+#17. No, no explicit return statement is needed
+
+#RAILS
+#18. before_validation, before_create, before_save, after_create
+#19. 
+#20.
+#21.
+#22.
+#23.
+#24.
+#25.
