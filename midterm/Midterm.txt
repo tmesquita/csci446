@@ -1,3 +1,6 @@
+Midterm for csci446
+Thomas Mesquita
+
 1. The difference between a put and post request is that POST identifies the resource that will handle the enclosed entity whereas a PUT identifies the entity enclosed with the request
 
 2. It is relative
