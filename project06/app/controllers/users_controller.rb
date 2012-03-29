@@ -43,8 +43,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     respond_to do |format|
-      if @user.save
-        format.html { redirect_to :users, :notice => 'Registration successful' }
+      if verify_recaptcha(@user) && @user.save 
+        format.html { redirect_to root_url, :notice => 'Registration successful' }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
