@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  filter_parameter_loggin "password"
 
-  helper_method :current_user
+  helper_method :current_user, :current_user_session
 
   private
 

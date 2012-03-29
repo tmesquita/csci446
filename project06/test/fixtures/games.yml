@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  added_buy: 1
+  rating: MyString
+
+two:
+  title: MyString
+  added_buy: 1
+  rating: MyString

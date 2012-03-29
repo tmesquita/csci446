@@ -1,10 +1,19 @@
 Gamez::Application.routes.draw do
+  resources :games
+
   resources :users, :user_sessions
 
 
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
 
+  namespace :admin do
+    resources :users
+  end
+
+  namespace :member do
+
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
