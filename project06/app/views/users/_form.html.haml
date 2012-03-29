@@ -23,5 +23,14 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation
+  .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    %br/
+    = f.text_field :last_name
+  
   .actions
     = f.submit
