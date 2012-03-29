@@ -1,0 +1,17 @@
+%p#notice= notice
+%p
+  %b User name:
+  = @user.username
+%p
+  %b Email:
+  = @user.email
+%p
+  %b First Name:
+  = @user.first_name
+%p
+  %b Last Name:
+  = @user.last_name
+
+= link_to 'Edit', edit_user_path(@user)
+|
+\#{link_to 'Back', users_path}
