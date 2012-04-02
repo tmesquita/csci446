@@ -10,15 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120329014547) do
+ActiveRecord::Schema.define(:version => 20120329053746) do
 
   create_table "games", :force => true do |t|
     t.string   "title"
-    t.integer  "added_buy"
+    t.integer  "user_id"
     t.string   "rating"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name",                       :null => false
+    t.string   "description"
+    t.integer  "users_count", :default => 0
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "roles", ["name"], :name => "index_roles_on_name", :unique => true
 
   create_table "user_sessions", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -35,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20120329014547) do
     t.datetime "updated_at",        :null => false
     t.string   "first_name"
     t.string   "last_name"
+    t.integer  "role_id"
   end
 
 end

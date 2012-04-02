@@ -1,4 +1,4 @@
-class member::GamesController < ApplicationController
+class Member::GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
@@ -41,7 +41,7 @@ class member::GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(params[:game])
-    @game.added_buy = current_user.id
+    @game.user_id = current_user.id
 
     respond_to do |format|
       if @game.save

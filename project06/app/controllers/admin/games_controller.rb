@@ -41,7 +41,7 @@ class Admin::GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(params[:game])
-    @game.added_buy = current_user.id
+    @game.user_id = current_user.id
 
     respond_to do |format|
       if @game.save
