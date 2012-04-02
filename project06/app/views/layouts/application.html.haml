@@ -9,7 +9,7 @@
   .nav_bar
     - if current_user
       Logged in as
-      = current_user.username
+      = link_to current_user.username, edit_members_user_path(current_user)
       , 
       = current_user.get_role
        
