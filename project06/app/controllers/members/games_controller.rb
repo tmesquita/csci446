@@ -1,4 +1,4 @@
-class Member::GamesController < ApplicationController
+class Members::GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
