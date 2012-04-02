@@ -32,6 +32,10 @@
     %br/
     = f.text_field :last_name
   .field
+    = f.label :photo
+    %br/
+    =f.file_field :photo
+  .field
     = recaptcha_tags
   .actions
     = f.submit 'Register'

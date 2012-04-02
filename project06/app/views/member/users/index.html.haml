@@ -1,4 +1,4 @@
-%h1 Listing users
+%h2 Listing users
 %p
   #notice= notice
 %table
@@ -16,8 +16,7 @@
       %td= user.email
       %td= user.first_name
       %td= user.last_name
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
+      %td= link_to 'Edit', edit_member_user_path(user)
       %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
 %br/
 = link_to 'New User', new_user_path

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	has_many :games
 	belongs_to :role
 
+	has_attached_file :photo
 	validates :first_name, :last_name, :presence => true
 	validates_length_of :password, :minimum => 6
 	validates_length_of :username, :minimum => 6
