@@ -29,5 +29,9 @@
     = f.label :photo
     = f.file_field :photo
     = image_tag @user.photo.url
+  .field
+    = f.label :role
+    = f.collection_select :role_id, Role.all, :id, :name, :prompt => 'Select a role'
+  
   .actions
     = f.submit
