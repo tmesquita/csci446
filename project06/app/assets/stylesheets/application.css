@@ -43,3 +43,12 @@ label {
 .actions {
   margin-left: 13em;
 }
+
+.radio_buttons {
+  margin-left: 170px;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}

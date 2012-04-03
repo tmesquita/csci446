@@ -32,11 +32,15 @@ th {
 	color: black;	
 }
 
-.rating, .title, .date {
+.rating, .title {
 	text-align: left;
 	width: 10em;
 }
 
+.date {
+	text-align: left;
+	width: 20em;
+}
 .buttons {
 	width: 7em;
 	background: white;
