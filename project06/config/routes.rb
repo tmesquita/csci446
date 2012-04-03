@@ -1,21 +1,23 @@
 Gamez::Application.routes.draw do
-  resources :games
-
+  resources :users, :user_sessions, :games
+  
   root :to => 'home#index'
-  resources :users, :user_sessions
 
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
-
+  match 'register' => 'users#new', :as => :register
+  
   namespace :admin do
     resources :users
     resources :games
   end
 
   namespace :members do
+    get 'me' => 'users#edit', :as => :me
     resources :users, :only => [:edit, :update]
     resources :games
-    root :to => 'members#index'
+    root :to => 'games#index'
+    
   end
 
   # You can have the root of your site routed with "root"
