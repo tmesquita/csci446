@@ -1,4 +1,6 @@
 Gamez::Application.routes.draw do
+  resources :roles
+
   resources :users, :user_sessions, :games
   
   root :to => 'home#index'
@@ -10,6 +12,7 @@ Gamez::Application.routes.draw do
   namespace :admin do
     resources :users
     resources :games
+    resources :roles
     root :to => 'games#index'
   end
 
