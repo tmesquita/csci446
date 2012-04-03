@@ -14,10 +14,11 @@ class UserSessionsController < ApplicationController
   # POST /user_sessions.json
   def create
     @user_session = UserSession.new(params[:user_session])
-
+    #user = USER.find(params[:email], params[:password])
+    
     respond_to do |format|
-      if @user_session.save
-        format.html { redirect_to root_url, :notice => 'login successful' }
+      if @user_session.save 
+        format.html { redirect_to home_url_for(current_user), :notice => 'login successful' }
         format.json { render :json => @user_session, :status => :created, :location => @user_session }
       else
         format.html { render :action => "new" }

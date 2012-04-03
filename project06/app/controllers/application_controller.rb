@@ -4,6 +4,13 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :current_user_session
 
+  protected
+
+  def home_url_for(user)
+    return root_url if user.nil?
+    user.is_member? ? members_root_url : admin_root_url
+  end
+
   private
 
   def current_user_session

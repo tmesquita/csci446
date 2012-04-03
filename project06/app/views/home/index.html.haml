@@ -9,4 +9,4 @@
     %tr
       %td.title= game.title
       %td.rating= game.rating
-      %td.date= game.date
+      %td.date= game.created_at.strftime("%b. %d, %Y") + ' by ' + game.user.first_name + " " + game.user.last_name
