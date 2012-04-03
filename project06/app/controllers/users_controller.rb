@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    @user.role_id = 3
+    @user.role_id = Role.find_or_create_by_name("member").id
     respond_to do |format|
       if verify_recaptcha(@user) && @user.save 
         format.html { redirect_to root_url, :notice => 'Registration successful' }
