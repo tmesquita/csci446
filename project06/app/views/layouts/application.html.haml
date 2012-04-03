@@ -9,17 +9,18 @@
   .nav_bar
     - if current_user
       Logged in as
-      = link_to current_user.username, edit_members_user_path(current_user)
+      = link_to current_user.username, :members_me
       , 
       = current_user.get_role
        
       = link_to "Logout", :logout
+      %h1
+        = link_to "Games", members_root_url
     - else
       = link_to "Login", :login
-      = link_to "Register", new_user_path
-
-  %h1
-    = link_to "Games", root_url
+      = link_to "Register", :register
+      %h1
+        = link_to "Games", root_url
   %body
     
     = yield

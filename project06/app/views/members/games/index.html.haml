@@ -1,4 +1,4 @@
-%h1 Listing games
+%h2 Listing games
 %table
   %tr
     %th.title Title
@@ -9,10 +9,10 @@
     %tr
       %td.title= game.title
       %td.rating= game.rating
-      %td.date= game.date
+      %td.date= game.created_at
       %td.buttons
         = link_to 'Show', game
-        = link_to 'Edit', edit_game_path(game)
+        = link_to 'Edit', edit_members_game_path(game)
         = link_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete
 %br/
-= link_to 'New Game', new_game_path
+= link_to 'New Game', new_members_game_path

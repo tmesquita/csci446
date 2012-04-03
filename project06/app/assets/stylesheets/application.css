@@ -31,3 +31,15 @@
 h1 {
   text-align: center;
 }
+
+label {
+  width: 10em;
+  float: left;
+  text-align: right;
+  margin-right: 3em;
+  display: block; 
+}
+
+.actions {
+  margin-left: 13em;
+}
