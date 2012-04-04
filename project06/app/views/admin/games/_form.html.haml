@@ -18,6 +18,9 @@
         = f.radio_button :rating, rating, :label => rating.humanize
         = rating.humanize
         %br
-    
+    .field
+
+    = f.label :user_id
+    = f.collection_select :user_id, User.all, :id, :full_name, :prompt => 'Select a user'
   .actions
     = f.submit

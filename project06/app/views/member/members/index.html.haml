@@ -10,4 +10,4 @@
       %td.rating= game.rating.humanize
       %td.date= game.created_at.strftime("%b. %d, %Y") + ' by ' + game.user.first_name + " " + game.user.last_name
 %br/
-= link_to 'New Game', new_members_game_path
+= link_to 'New Game', new_member_game_path

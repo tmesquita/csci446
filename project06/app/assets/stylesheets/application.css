@@ -17,15 +17,28 @@
   	list-style-type: none;
   	display: inline;
   }
+}
 
-  a {
-  	color:#494949;
-  	&:visited {color: #666}
-  	&:hover {
-	  color: black;
-	  background-color: #DBDBDB;
-	}
+.admin_nav_bar{
+  margin-left: 20em;
+  margin-right: 20em;
+  border-width: 1px;
+  border-style: solid;
+
+  text-align: left;
+  ul {
+    list-style-type: none;
+    display: inline;
   }
+}
+
+a {
+	color:#494949;
+ 	&:visited {color: #666}
+ 	&:hover {
+    color: black;
+	 background-color: #DBDBDB;
+	}
 }
 
 h1 {

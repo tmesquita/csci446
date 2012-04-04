@@ -22,5 +22,7 @@
       %h1
         = link_to "Gamez", root_url
   %body
-    
+    -if current_user and current_user.is_admin?
+      = render :partial => 'layouts/admin_nav_bar'
+      %br
     = yield
