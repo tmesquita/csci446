@@ -17,11 +17,11 @@ Gamez::Application.routes.draw do
 
   namespace :member do
     resources :users, :only => [:edit, :update]
+    match 'me' => 'users#edit', :as => :me
     resources :games
     root :to => 'games#index'
     
   end
-    match 'member/me' => 'member/users#edit', :as => :me
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
