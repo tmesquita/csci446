@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
 	acts_as_authentic
 	has_many :games
 	belongs_to :role
-
 	has_attached_file :photo
 	validates :first_name, :last_name, :presence => true
   validates :password, :confirmation => true, :presence => true, :on => :create

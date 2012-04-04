@@ -1,12 +1,13 @@
 authorization do
   role :admin do
+    includes :member
     has_permission_on :admin_users, :to => :manage
     has_permission_on :admin_games, :to => :manage
     has_permission_on :admin_roles, :to => :manage
   end
   
   role :member do
-    has_permission_on :home, :to => [:index]
+    includes :guest
     has_permission_on :member_games, :to => :manage
     has_permission_on :member_users, :to => :update do
       if_attribute :id => is { user.id }

@@ -2,7 +2,7 @@ class Member::GamesController < Member::MemberController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    @games = Game.paginate :page => params[:page], :order => 'created_at desc', :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb
@@ -45,7 +45,7 @@ class Member::GamesController < Member::MemberController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to members_root_url, :notice => 'Game was successfully created.' }
+        format.html { redirect_to member_root_url, :notice => 'Game was successfully created.' }
         format.json { render :json => @game, :status => :created, :location => @game }
       else
         format.html { render :action => "new" }

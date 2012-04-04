@@ -15,7 +15,10 @@
        
       = link_to "Logout", :logout
       %h1
-        = link_to "Games", member_root_url
+        -if current_user.is_member?
+          = link_to "Gamez",  member_root_url
+        - else
+          = link_to "Gamez", admin_root_url
     - else
       = link_to "Login", :login
       = link_to "Register", :register

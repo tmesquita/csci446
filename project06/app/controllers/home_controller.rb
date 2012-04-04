@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   #filter_access_to :all
   
   def index
-    @games = Game.all
+    @games = Game.paginate :page => params[:page], :order => 'created_at desc', :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb

@@ -27,6 +27,7 @@ gem 'authlogic'
 gem 'declarative_authorization'
 gem 'erb2haml'
 gem "recaptcha", :require => "recaptcha/rails"
+gem 'will_paginate'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

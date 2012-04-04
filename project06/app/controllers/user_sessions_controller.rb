@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
   # POST /user_sessions.json
   def create
     @user_session = UserSession.new(params[:user_session])
-    #user = USER.find(params[:email], params[:password])
+    #user = User.find(params[:username], params[:password])
     
     respond_to do |format|
       if @user_session.save 
