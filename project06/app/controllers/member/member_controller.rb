@@ -1,7 +1,8 @@
-class HomeController < ApplicationController
- skip_before_filter
-  #filter_access_to :all
-  
+class Member::MemberController < ApplicationController
+  before_filter :require_user
+  filter_resource_access
+  filter_access_to :all
+
   def index
     @games = Game.all
 
@@ -10,4 +11,4 @@ class HomeController < ApplicationController
       format.json { render :json => @games }
     end
   end
-end
+end 

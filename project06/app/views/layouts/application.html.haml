@@ -9,13 +9,13 @@
   .nav_bar
     - if current_user
       Logged in as
-      = link_to current_user.username, :members_me
+      = link_to current_user.username, :member_me
       , 
       = current_user.get_role
        
       = link_to "Logout", :logout
       %h1
-        = link_to "Games", members_root_url
+        = link_to "Games", member_root_url
     - else
       = link_to "Login", :login
       = link_to "Register", :register

@@ -1,7 +1,5 @@
 Gamez::Application.routes.draw do
-  resources :roles
-
-  resources :users, :user_sessions, :games
+  resources :users, :user_sessions, :games, :roles
   
   root :to => 'home#index'
 
@@ -11,14 +9,15 @@ Gamez::Application.routes.draw do
   
   namespace :admin do
     resources :users
+    match 'me' => 'users#edit'
     resources :games
     resources :roles
     root :to => 'games#index'
   end
 
-  namespace :members do
-    get 'me' => 'users#edit', :as => :me
+  namespace :member do
     resources :users, :only => [:edit, :update]
+    match 'me' => 'users#edit'
     resources :games
     root :to => 'games#index'
     

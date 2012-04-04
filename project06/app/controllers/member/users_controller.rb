@@ -1,4 +1,4 @@
-class Members::UsersController < ApplicationController
+class Member::UsersController < Member::MemberController
   # GET /users/1/edit
   def edit
     @user = current_user
@@ -11,7 +11,7 @@ class Members::UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to edit_members_user_path(@user), :notice => 'User was successfully updated.' }
+        format.html { redirect_to edit_member_user_path(@user), :notice => 'User was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }

@@ -1,9 +1,8 @@
-class Admin::RolesController < ApplicationController
+class Admin::RolesController < Admin::AdminController
   # GET /roles
   # GET /roles.json
   def index
     @roles = Role.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @roles }

@@ -1,0 +1,13 @@
+%table
+  %tr
+    %th.title Title
+    %th.rating Rating
+    %th.date Date Added
+    %th.buttons
+  - @games.each do |game|
+    %tr
+      %td.title= link_to game.title, edit_members_game_path(game)
+      %td.rating= game.rating.humanize
+      %td.date= game.created_at.strftime("%b. %d, %Y") + ' by ' + game.user.first_name + " " + game.user.last_name
+%br/
+= link_to 'New Game', new_members_game_path

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  filter_resource_access
   # GET /users/new
   # GET /users/new.json
   def new
