@@ -11,6 +11,9 @@
     %tr
       %td.title= link_to game.title, edit_admin_game_path(game)
       %td.rating= game.rating.humanize
-      %td.date= game.created_at.strftime("%b. %d, %Y") + ' by ' + game.user.first_name + " " + game.user.last_name
+      - if game.user_id.eql? current_user.id
+        %td.date= game.created_at.strftime("%b. %d, %Y") + ' by me'
+      - else
+        %td.date= game.created_at.strftime("%b. %d, %Y") + ' by ' + game.user.first_name + " " + game.user.last_name
 %br/
 = link_to 'New Game', new_admin_game_path
