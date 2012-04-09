@@ -1,0 +1,7 @@
+.nav_bar
+  Logged in as
+  = link_to current_user.full_name, :member_me
+  ,
+  = current_user.get_role + "."
+  = link_to 'My Games', member_games_path
+  = link_to "Logout", :logout

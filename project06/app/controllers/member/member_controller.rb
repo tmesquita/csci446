@@ -1,7 +1,8 @@
 class Member::MemberController < ApplicationController
   before_filter :require_user
   filter_access_to :all
-  #filter_resource_access
+  
+  layout 'member'
 
   def index
     @games = Game.all

@@ -1,0 +1,9 @@
+.nav_bar
+  Logged in as
+  = link_to current_user.full_name, :admin_me
+  , 
+  = current_user.get_role + "."
+  
+  = link_to Admin, admin_root_url
+
+  = link_to "Logout", :logout
