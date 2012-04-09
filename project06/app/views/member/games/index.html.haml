@@ -10,11 +10,8 @@
     %th.buttons
   - @games.each do |game|
     %tr
-      %td.title= link_to game.title, edit_member_game_path(game)
-      %td.rating= game.rating.humanize
-      - if game.user_id.eql? current_user.id
-        %td.date= game.created_at.strftime("%b. %d, %Y") + ' by me'
-      - else
-        %td.date= game.created_at.strftime("%b. %d, %Y") + ' by ' + game.user.first_name + " " + game.user.last_name
+      %td.title= game_title(game)
+      %td.rating= game_rating(game)
+      %td.date= game_date(game) 
 %br/
 = link_to 'New Game', new_member_game_path
