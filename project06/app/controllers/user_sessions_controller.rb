@@ -18,7 +18,7 @@ class UserSessionsController < ApplicationController
     
     respond_to do |format|
       if @user_session.save 
-        format.html { redirect_to home_url_for(current_user), :notice => 'login successful' }
+        format.html { redirect_to home_url_for(@user_session.user), :notice => 'login successful' }
         format.json { render :json => @user_session, :status => :created, :location => @user_session }
       else
         format.html { render :action => "new" }
