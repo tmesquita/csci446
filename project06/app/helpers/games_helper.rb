@@ -14,7 +14,7 @@ module GamesHelper
 	end
 
 	def game_date(game)
-		if (current_user.nil? or !game.created_by? current_user) and !current_user.is_admin?
+		if current_user.nil? or (!game.created_by? current_user and !current_user.is_admin?)
         	game.created_at.strftime("%b. %d, %Y") + ' by ' + game.user.full_name
 		elsif game.created_by? current_user
 			if current_user.is_member?
