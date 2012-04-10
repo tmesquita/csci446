@@ -10,7 +10,7 @@ authorization do
     includes :guest
     has_permission_on :member_games, :to => :manage
     has_permission_on :member_users, :to => :update do
-      if_attribute :id => is { user.id }
+      if_attribute :user => is { user }
     end
   end
   

@@ -2,7 +2,7 @@ class Member::GamesController < Member::MemberController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.paginate :page => params[:page], :order => 'created_at desc', :per_page => 10
+    @games = Game.paginate(:page => params[:page], :order => 'created_at desc', :per_page => 10).where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -35,6 +35,10 @@ class Member::GamesController < Member::MemberController
   # GET /games/1/edit
   def edit
     @game = Game.find(params[:id])
+    unless @game.user.eql? current_user
+      flash[:alert] = "Hey bro, you can't edit games that aren't yours!"
+      redirect_to member_root_url
+    end
   end
 
   # POST /games
@@ -45,7 +49,7 @@ class Member::GamesController < Member::MemberController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to member_root_url, :notice => 'Game was successfully created.' }
+        format.html { redirect_to member_root_url, :notice => "Successfully added #{@game.title}" }
         format.json { render :json => @game, :status => :created, :location => @game }
       else
         format.html { render :action => "new" }
@@ -61,7 +65,7 @@ class Member::GamesController < Member::MemberController
 
     respond_to do |format|
       if @game.update_attributes(params[:game])
-        format.html { redirect_to members_root_url, :notice => 'Game was successfully updated.' }
+        format.html { redirect_to member_root_url, :notice => "Successfully updated #{@game.title}" }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }

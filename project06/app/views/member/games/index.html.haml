@@ -1,5 +1,8 @@
 %p#notice= notice
 %p#alert= alert
+%h3
+  My Gamez
+= link_to 'add a new game', new_member_game_path
 %p
   = will_paginate @games
 %table
@@ -14,4 +17,5 @@
       %td.rating= game_rating(game)
       %td.date= game_date(game) 
 %br/
-= link_to 'New Game', new_member_game_path
+%p
+  = "I\'ve created #{pluralize(@games.count, 'game')}, #{rating_percent} of which are rated."
