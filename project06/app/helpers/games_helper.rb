@@ -14,10 +14,16 @@ module GamesHelper
 	end
 
 	def game_date(game)
-		if !current_user.nil? and game.created_by? current_user
-        	game.created_at.strftime("%b. %d, %Y") + ' by me'
-        else
+		if (current_user.nil? or !game.created_by? current_user) and !current_user.is_admin?
         	game.created_at.strftime("%b. %d, %Y") + ' by ' + game.user.full_name
+		elsif game.created_by? current_user
+			if current_user.is_member?
+        		game.created_at.strftime("%b. %d, %Y") + ' by me'
+        	else
+        		%(#{game.created_at.strftime("%b. %d, %Y")} by #{link_to('me', edit_admin_user_path(game.user))}).html_safe
+    		end	
+        elsif current_user.is_admin?
+        	%(#{game.created_at.strftime("%b. %d, %Y")} by #{link_to(game.user.full_name, edit_admin_user_path(game.user))}).html_safe
         end
 	end
 

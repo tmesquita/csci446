@@ -1,4 +1,4 @@
-%h1 Listing users
+%h2 Users
 %p
   #notice= notice
 %p
@@ -13,7 +13,5 @@
     %tr
       %td= link_to user.full_name, edit_admin_user_path(user)
       %td= user.username
-      %td= user.last_login_at
+      %td= last_login(user)
       %td= user.games.count
-%br/
-= link_to 'New User', new_admin_user_path

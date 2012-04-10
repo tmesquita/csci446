@@ -11,9 +11,6 @@
     = f.label :username
     = f.text_field :username, :disabled => true
   .field
-    = f.label :email
-    = f.text_field :email
-  .field
     = f.label :password
     = f.password_field :password
   .field
@@ -26,8 +23,11 @@
     = f.label :last_name
     = f.text_field :last_name
   .field
+    = f.label :email
+    = f.text_field :email
+  .field
     = f.label :photo
     = f.file_field :photo
     = image_tag @user.photo.url
   .actions
-    = f.submit
+    = f.submit 'Save Changes'

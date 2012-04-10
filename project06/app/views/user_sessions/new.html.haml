@@ -1,4 +1,6 @@
-%h1 Login
+%h2 Log In
 %p#alert= alert
+= %(First time here? #{link_to('Register.', :register)}).html_safe
+%br
+%br
 = render 'form'
-= link_to 'Back', root_url

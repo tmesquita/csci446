@@ -10,17 +10,6 @@ class Member::GamesController < Member::MemberController
     end
   end
 
-  # GET /games/1
-  # GET /games/1.json
-  def show
-    @game = Game.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @game }
-    end
-  end
-
   # GET /games/new
   # GET /games/new.json
   def new
@@ -81,7 +70,7 @@ class Member::GamesController < Member::MemberController
     @game.destroy
 
     respond_to do |format|
-      format.html { redirect_to games_url }
+      format.html { redirect_to member_root_url }
       format.json { head :no_content }
     end
   end

@@ -11,7 +11,7 @@ class Member::UsersController < Member::MemberController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to edit_member_user_path(@user), :notice => 'User was successfully updated.' }
+        format.html { redirect_to member_root_path, :notice => 'Successfully updated profile' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
@@ -27,7 +27,7 @@ class Member::UsersController < Member::MemberController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to root_url }
       format.json { head :no_content }
     end
   end

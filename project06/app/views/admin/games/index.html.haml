@@ -1,5 +1,8 @@
 %p#notice= notice
 %p#alert= alert
+%h2
+  = "#{@games.count} Total Games"
+= link_to 'Add a game', new_admin_game_path
 %p
   = will_paginate @games
 %table
@@ -12,5 +15,3 @@
       %td.title= game_title(game)
       %td.rating= game_rating(game)
       %td.date= game_date(game)
-%br/
-= link_to 'New Game', new_admin_game_path

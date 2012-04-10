@@ -2,7 +2,8 @@ class Admin::RolesController < Admin::AdminController
   # GET /roles
   # GET /roles.json
   def index
-    @roles = Role.all
+    @roles = Role.paginate(:page => params[:page], :order => 'name asc', :per_page => 10)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @roles }
@@ -43,7 +44,7 @@ class Admin::RolesController < Admin::AdminController
 
     respond_to do |format|
       if @role.save
-        format.html { redirect_to @role, :notice => 'Role was successfully created.' }
+        format.html { redirect_to admin_roles_path, :notice => 'Role was successfully created.' }
         format.json { render :json => @role, :status => :created, :location => @role }
       else
         format.html { render :action => "new" }
@@ -59,7 +60,7 @@ class Admin::RolesController < Admin::AdminController
 
     respond_to do |format|
       if @role.update_attributes(params[:role])
-        format.html { redirect_to @role, :notice => 'Role was successfully updated.' }
+        format.html { redirect_to admin_roles_path, :notice => 'Role was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
@@ -75,7 +76,7 @@ class Admin::RolesController < Admin::AdminController
     @role.destroy
 
     respond_to do |format|
-      format.html { redirect_to roles_url }
+      format.html { redirect_to admin_roles_path }
       format.json { head :no_content }
     end
   end
