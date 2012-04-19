@@ -26,12 +26,17 @@ h2#score {
   margin: 0px;
 }
 
+h2#hint {
+  color: red;
+  margin: 0px;
+}
+
 input#guess {
   font-size: 8em;
 }
 
 input#btnGuess {
-  font-size: 20em;
+  font-size: 10em;
 }
 
 form#guessTheNumber {
